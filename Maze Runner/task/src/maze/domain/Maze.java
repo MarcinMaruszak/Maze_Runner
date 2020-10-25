@@ -217,8 +217,6 @@ public class Maze implements Serializable {
     }
 
     private void addEscapeToMaze() {
-        System.out.println(Arrays.deepToString(goodPath));
-        System.out.println(Arrays.deepToString(wasHere));
         for (int row = 0; row < goodPath.length; row++) {
             for (int col = 0; col < goodPath[0].length; col++) {
                 if (goodPath[row][col]) {
