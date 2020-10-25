@@ -1,6 +1,5 @@
 package maze.domain;
 
-import javax.print.attribute.standard.NumberOfDocuments;
 import java.io.Serializable;
 import java.util.*;
 
@@ -22,7 +21,6 @@ public class Maze implements Serializable {
         this.maze = new int[size[0]][size[1]];
         this.adjacencyList = new ArrayList<>();
         this.tree = new LinkedHashSet<>();
-        //this.escape = new ArrayDeque<>();
     }
 
     public void setMaze(int size) {
@@ -194,7 +192,6 @@ public class Maze implements Serializable {
             return true;
         }
 
-        // If you are on a wall or already were here
         wasHere[x][y] = true;
         if (x != 0) // Checks if not on top edge
             if (recursiveSolve(x - 1, y)) { // Recalls method one to the left
@@ -219,7 +216,6 @@ public class Maze implements Serializable {
         return false;
     }
 
-
     private void addEscapeToMaze() {
         System.out.println(Arrays.deepToString(goodPath));
         System.out.println(Arrays.deepToString(wasHere));
@@ -231,7 +227,6 @@ public class Maze implements Serializable {
             }
         }
     }
-
 
     public void print() {
         for (int[] ints : maze) {
